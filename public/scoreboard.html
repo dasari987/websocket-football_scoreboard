@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <script src="/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>score board</h1>
+    <h2 id="dd">
+      India: <span id="ind"></span> -
+      <span id="pak"></span> :Pakisthan
+    </h2>
+    <script>
+      var socket = io();
+      socket.on("message",function (data) {
+        console.log(data)
+        document.getElementById("ind").innerHTML=data.IND;
+        document.getElementById("pak").innerHTML=data.PAK;
+      })
+    </script>
+  </body>
+</html>
